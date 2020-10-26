@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Keyboard Search Cost Analysis</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="author" content="Will Sartin">
+
+  <!-- Font Awesome if you need it
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+  -->
+  <link rel="stylesheet" href="css/home.css">
+  <!--Replace with your tailwind.css once created-->
+
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet">
+
+	<!-- Define your gradient here - use online tools to find a gradient matching your branding-->
+	<style>
+		.gradient {
+			background: linear-gradient(90deg, #d53369 0%, #daae51 100%);
+		}
+	</style>
+
+</head>
+
+<body class="leading-normal tracking-normal text-white gradient" style="font-family: 'Source Sans Pro', sans-serif;">
+  <div id="searchBox">
+    <h1>Run Query</h1>
+    <label for="yearTextBox">Select Year:</label>
+    <input id="yearTextBox" type="text" placeholder="ex: 1993"/>
+    </br>
+    <label for="minRunTime">Select Min Run Time:</label>
+    <input  id="minRunTime" type="text" placeholder="ex: 40"/>
+    <button type="button" onclick="runQuery(document.getElementById('yearTextBox').value, document.getElementById('minRunTime').value)">Go</button>
+    <table id="searchContainer"></table>
+  </div>
+
+  <script src="js/searcher.js"/>
+
+</body>
+
+</html>
