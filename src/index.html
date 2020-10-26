@@ -25,21 +25,22 @@
 		}
 	</style>
 
+  <script src="js/bundle.js" >
+    </script>
+
 </head>
 
 <body class="leading-normal tracking-normal text-white gradient" style="font-family: 'Source Sans Pro', sans-serif;">
   <div id="searchBox">
     <h1>Run Query</h1>
     <label for="yearTextBox">Select Year:</label>
-    <input id="yearTextBox" type="text" placeholder="ex: 1993"/>
-    </br>
+    <input id="yearTextBox" type="text" placeholder="ex: 1993"></input>
+    <p></br></p>
     <label for="minRunTime">Select Min Run Time:</label>
-    <input  id="minRunTime" type="text" placeholder="ex: 40"/>
-    <button type="button" onclick="runQuery(document.getElementById('yearTextBox').value, document.getElementById('minRunTime').value)">Go</button>
-    <table id="searchContainer"></table>
+    <input  id="minRunTime" type="text" placeholder="ex: 40"></input>
+    <button type="button" onclick="myBundle.runQuery(document.getElementById('yearTextBox').value, document.getElementById('minRunTime').value);">Go</button>
+    <div id="searchContainer"></div>
   </div>
-
-  <script src="js/searcher.js"/>
 
 </body>
 

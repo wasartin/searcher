@@ -1,3 +1,8 @@
+// var rs = require('readline-sync');
+//
+// var yearInput = rs.question('Input year: ');
+// var minRunTimeInput = rs.question('Input minRunTime: ');
+
 async function listDatabases(client){
     databasesList = await client.db().admin().listDatabases();
 
@@ -6,6 +11,7 @@ async function listDatabases(client){
 };
 
 async function runQuery(selectedYear, selectedMinRunTime){
+//async function runQuery(){
   const MongoClient = require('mongodb').MongoClient;
   un = "admin"
   password = "@dm!nP@33w0rd"
@@ -18,10 +24,11 @@ async function runQuery(selectedYear, selectedMinRunTime){
 
     await listDatabases(client);
 
-    var query = { year: selectedYear, runtime: {$gt: selectedMinRunTime}}
+    var query = { year: selectedYear, runtime: {$gt: selectedMinRunTime}};
 
-    await client.db().query.limit(10);
-
+    await client.db("sample_mflix").collection("movies").find(query).limit(5).toArray(function(err, result){
+      console.log(result);
+    });
   } catch (e) {
     console.error(e);
   } finally {
@@ -51,7 +58,6 @@ async function runQuery(selectedYear, selectedMinRunTime){
 //   }
 //
 
-
   // client.connect(err => {
   // //  const collection = client.db("test").collection("devices")
   //   //Cluster0
@@ -65,4 +71,4 @@ async function runQuery(selectedYear, selectedMinRunTime){
 
 }
 
-main().catch(console.error);
+//runQuery(1993, 45).catch(console.error);
